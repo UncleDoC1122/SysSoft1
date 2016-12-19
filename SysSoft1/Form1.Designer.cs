@@ -1,4 +1,6 @@
-﻿namespace SysSoft1
+﻿using System.Drawing;
+
+namespace SysSoft1
 {
     partial class Form1
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.InputDataBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -97,11 +100,11 @@
             // DoItBtn
             // 
             this.DoItBtn.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DoItBtn.Image = ((System.Drawing.Image)(resources.GetObject("DoItBtn.Image")));
             this.DoItBtn.Location = new System.Drawing.Point(12, 454);
             this.DoItBtn.Name = "DoItBtn";
             this.DoItBtn.Size = new System.Drawing.Size(758, 89);
             this.DoItBtn.TabIndex = 7;
-            this.DoItBtn.Text = "ВЖУХ";
             this.DoItBtn.UseVisualStyleBackColor = true;
             this.DoItBtn.Click += new System.EventHandler(this.DoItBtn_Click);
             // 
