@@ -15,6 +15,7 @@ namespace SysSoft1
         private string InputData = "";
         private string InputQuery = "";
         private string OutputData = "";
+        private List<Tuple<string, int>>[] = new List<Tuple<string, int>>[]();
         private OpenFileDialog openFileDialog1 = new OpenFileDialog();
         public Form1()
         {
