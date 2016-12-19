@@ -121,6 +121,11 @@ namespace SysSoft1
 
         private void DoItBtn_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
+            {
+                MessageBox.Show("All fields must be filled!");
+                return;
+            }
             System.IO.StreamReader fileReader = new System.IO.StreamReader(InputData);
             List<string> tempList = new List<string>();
             string line;
@@ -211,8 +216,10 @@ namespace SysSoft1
 
             output += "\n\nAverage collisions:  " + avgCollision(hashTable).ToString();
 
-
-
+            System.IO.StreamWriter outputter = new System.IO.StreamWriter(textBox3.Text);
+            outputter.WriteLine(output);
+            outputter.Close();
+            
             MessageBox.Show(output);
 
         }
