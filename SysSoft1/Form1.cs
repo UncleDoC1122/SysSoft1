@@ -82,10 +82,15 @@ namespace SysSoft1
                 List<Tuple<string, int>> tmp = input[i];
                 if (tmp[0] != null && tmp[0].Item2 == hashCode)
                 {
-                    flag = true;
+                    
                     for (int k = 0; k < tmp.Count; k ++)
                     {
-                        output.Add(tmp[k]);
+                        
+                        if (tmp[k].Item1.ToString().Equals(findIt))
+                        {
+                            flag = true;
+                            output.Add(tmp[k]);
+                        }
                     }
                 }
             }
@@ -99,7 +104,20 @@ namespace SysSoft1
             return output;
         }
 
+        private double avgCollision(List<List<Tuple<string, int>>> hashTable)
+        {
+            int counter = 0;
+            int num = 0;
+            for (int i = 0; i < hashTable.Count; i ++)
+            {
+                num += hashTable[i].Count;
+                counter++;
+            }
 
+            double outp = (double) num / (double) counter;
+
+            return outp;
+        }
 
         private void DoItBtn_Click(object sender, EventArgs e)
         {
@@ -155,7 +173,7 @@ namespace SysSoft1
                 }
             }
 
-            string testOut = "";
+            //string testOut = "";
 
             //for (int i = 0; i < hashTable.Count; i ++)
             //{
@@ -190,6 +208,10 @@ namespace SysSoft1
                          
                 }
             }
+
+            output += "\n\nAverage collisions:  " + avgCollision(hashTable).ToString();
+
+
 
             MessageBox.Show(output);
 
