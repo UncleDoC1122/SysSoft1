@@ -166,7 +166,7 @@ namespace SysSoft1
             //    }
             //}
 
-            MessageBox.Show(testOut);
+            //MessageBox.Show(testOut);
 
 
 
@@ -179,11 +179,19 @@ namespace SysSoft1
             }
 
             List<Tuple<string, int>> foundPairs = new List<Tuple<string, int>>();
+            string output = "Found in HashTable\n";
 
             for (int i = 0; i < tempList.Count; i ++)
             {
-
+                foundPairs = findInHashTable(hashTable, tempList[i]);
+                for (int j = 0; j < foundPairs.Count; j ++)
+                {
+                    output += "\nValue:  " + foundPairs[j].Item1.ToString() + "  HashCode:  " + foundPairs[j].Item2.ToString();
+                         
+                }
             }
+
+            MessageBox.Show(output);
 
         }
     }
